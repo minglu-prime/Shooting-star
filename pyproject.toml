@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hoopcv"
+version = "0.1.0"
+description = "篮球技术动作视觉分析：关节角度、肩/髋内外旋、投篮与突破指标"
+requires-python = ">=3.9"
+dependencies = [
+  "mediapipe>=0.10.14",
+  "opencv-python>=4.8",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+ball = ["ultralytics>=8.3"]
+dev = ["pytest"]
+
+[project.scripts]
+hoopcv = "hoopcv.cli:main"
+
+[tool.setuptools]
+packages = ["hoopcv"]
